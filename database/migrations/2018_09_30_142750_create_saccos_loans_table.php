@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreateSaccosLoansTable extends Migration
 {
     /**
-     * Run the 
+     * Run the
      *
      * @return void
      */
@@ -30,7 +30,6 @@ class CreateSaccosLoansTable extends Migration
             $table->decimal('total_interest');
             $table->decimal('total_amount');
             $table->date('payment_principal');
-
             $table->date('payment_interest');
             $table->mediumText('loan_status');
             $table->timestamps();

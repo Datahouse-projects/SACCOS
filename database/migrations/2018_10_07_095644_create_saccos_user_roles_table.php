@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSaccosDepartmentsTable extends Migration
+class CreateSaccosUserRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateSaccosDepartmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('saccos_departments', function (Blueprint $table) {
+        Schema::create('saccos_user_roles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('department_name');
-            $table->integer('organization_id')->unsigned()->nullable();
-            $table->foreign('organization_id')->references('id')->on('saccos_organizations')->onDelete('cascade');
+            $table->string('role');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreateSaccosDepartmentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('saccos_departments');
+        Schema::dropIfExists('saccos_user_roles');
     }
 }

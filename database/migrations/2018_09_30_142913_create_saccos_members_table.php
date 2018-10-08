@@ -27,8 +27,8 @@ class CreateSaccosMembersTable extends Migration
             $table->integer('mobile_number');
             $table->date('date_of_registration');
             $table->string('passport_image');
-            $table->integer('departiment_id')->unsigned()->nullable();
-            $table->foreign('departiment_id')->references('id')->on('saccos_departments')->onDelete('cascade');
+            $table->integer('department_id')->unsigned()->nullable();
+            $table->foreign('department_id')->references('id')->on('saccos_departments')->onDelete('cascade');
             $table->integer('organization_id')->unsigned()->nullable();
             $table->foreign('organization_id')->references('id')->on('saccos_organizations')->onDelete('cascade');
             $table->timestamps();

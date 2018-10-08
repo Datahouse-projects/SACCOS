@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class SaccosShareHistory extends Model
 {
-    //
+    protected $fillable =[
+        'share_id',
+        'started_date',
+        'end_date'
+    ];
 }

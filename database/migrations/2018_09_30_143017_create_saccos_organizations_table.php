@@ -18,6 +18,7 @@ class CreateSaccosOrganizationsTable extends Migration
             $table->string('organization_name');
             $table->string('location');
             $table->string('functionality');
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }

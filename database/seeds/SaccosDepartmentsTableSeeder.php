@@ -13,19 +13,19 @@ class SaccosDepartmentsTableSeeder extends Seeder
     public function run()
     {
         $dept1 = [
-            'departiment_name'=>'Finance Department',
+            'department_name'=>'Finance Department',
             'organization_id'=>1,
         ];
         $dept2 = [
-            'departiment_name'=>'Academic Department',
+            'department_name'=>'Academic Department',
             'organization_id'=>1,
         ];
         $dept3 = [
-            'departiment_name'=>'Finance Department',
+            'department_name'=>'Finance Department',
             'organization_id'=>2,
         ];
         $dept4 = [
-            'departiment_name'=>'Academic Department',
+            'department_name'=>'Academic Department',
             'organization_id'=>2,
         ];
         SaccosDepartment::create($dept1);

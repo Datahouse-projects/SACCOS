@@ -15,6 +15,8 @@ class CreateSaccosSettingsTable extends Migration
     {
         Schema::create('saccos_settings', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('parameter_name');
+            $table->string('value');
             $table->integer('salary_id')->unsigned()->nullable();
             $table->foreign('salary_id')->references('id')->on('saccos_salaries')->onDelete('cascade');
             $table->decimal('reduced_from_salary');

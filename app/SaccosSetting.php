@@ -8,6 +8,8 @@ class SaccosSetting extends Model
 {
     protected $fillable =[
         'salary_id',
-        'reduced_from_salary'
+        'reduced_from_salary',
+        'parameter_name',
+        'value'
     ];
 }

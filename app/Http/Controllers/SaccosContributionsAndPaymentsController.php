@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\SaccosOrganization;
+use App\SaccosContribution;
+use App\SaccosPayment;
 use Illuminate\Http\Request;
 
-class SaccosManagementController extends Controller
+class SaccosContributionsAndPaymentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +15,7 @@ class SaccosManagementController extends Controller
      */
     public function index()
     {
-        $organizations = SaccosOrganization::orderBy('created_at','desc')->paginate(10);
-        return view('admin.organizations.index')->with([
-            'organizations'=>$organizations,
-        ]);
+        //
     }
 
     /**
@@ -27,7 +25,7 @@ class SaccosManagementController extends Controller
      */
     public function create()
     {
-        return view('admin.organizations.create');
+        //
     }
 
     /**
@@ -38,22 +36,7 @@ class SaccosManagementController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'organization_name'=>'required',
-            'location'=>'required',
-            'functionality'=>'required',
-            'logo'=>'required|image'
-        ]);
-        $logo = $request->logo;
-        $logo_new_name = time().$logo->getClientOriginalName();
-        $logo->move('uploads/organization/images/',$logo_new_name);
-        $oraganization = new SaccosOrganization;
-        $oraganization->organization_name = $request->organization_name;
-        $oraganization->location = $request->location;
-        $oraganization->functionality = $request->functionality;
-        $oraganization->logo = 'uploads/organization/images/'.$logo_new_name;
-        $oraganization->save();
-        return redirect()->back()->with('success','Organization added successful');
+        //
     }
 
     /**

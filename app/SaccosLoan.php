@@ -20,6 +20,7 @@ class SaccosLoan extends Model
         'total_amount',
         'payment_principal',
         'payment_interest',
-        'loan_status'
+        'loan_status',
+        'muximum amount'
     ];
 }

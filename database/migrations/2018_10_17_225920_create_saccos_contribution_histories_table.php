@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSaccosShareContributionHistoriesTable extends Migration
+class CreateSaccosContributionHistoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateSaccosShareContributionHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('saccos_share_contribution_histories', function (Blueprint $table) {
+        Schema::create('saccos_contribution_histories', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('contribution_amount');
+            $table->date('contribution_date');
             $table->integer('member_id')->unsigned()->nullable();
             $table->foreign('member_id')->references('id')->on('saccos_members')->onDelete('cascade');
             $table->integer('contribution_id')->unsigned()->nullable();
             $table->foreign('contribution_id')->references('id')->on('saccos_contributions')->onDelete('cascade');
-            $table->date('contribution_start_date');
-            $table->date('contribution_end_date');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateSaccosShareContributionHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('saccos_share_contribution_histories');
+        Schema::dropIfExists('saccos_contribution_histories');
     }
 }

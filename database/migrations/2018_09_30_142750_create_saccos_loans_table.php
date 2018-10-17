@@ -21,17 +21,17 @@ class CreateSaccosLoansTable extends Migration
             $table->foreign('organization_id')->references('id')->on('saccos_organizations');
             $table->integer('loans_category_id')->unsigned()->nullable();
             $table->foreign('loans_category_id')->references('id')->on('loans_categories')->onDelete('cascade');
-            $table->string('member_name');
+            $table->string('member_full_name');
             $table->date('created_date');
             $table->time('duration');
             $table->date('issued_date');
             $table->date('end_date');
-            $table->decimal('interest_per_day');
             $table->decimal('total_interest');
             $table->decimal('total_amount');
-            $table->date('payment_principal');
-            $table->date('payment_interest');
+            $table->decimal('payment_principal');
+            $table->decimal('payment_interest');
             $table->mediumText('loan_status');
+            $table->decimal('muximum amount');
             $table->timestamps();
         });
     }

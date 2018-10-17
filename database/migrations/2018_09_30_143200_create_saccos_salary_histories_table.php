@@ -19,8 +19,8 @@ class CreateSaccosSalaryHistoriesTable extends Migration
             $table->foreign('member_id')->references('id')->on('saccos_members')->onDelete('cascade');
             $table->integer('salary_id')->unsigned();
             $table->foreign('salary_id')->references('id')->on('saccos_salaries');
-            $table->decimal('salary_amount_start_date');
-            $table->decimal('salary_amount_end_date');
+            $table->date('salary_amount_start_date');
+            $table->date('salary_amount_end_date');
             $table->timestamps();
         });
     }

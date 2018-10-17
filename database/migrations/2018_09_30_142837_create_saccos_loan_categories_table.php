@@ -16,9 +16,10 @@ class CreateSaccosLoanCategoriesTable extends Migration
         Schema::create('saccos_loan_categories', function (Blueprint $table) {
             $table->increments('id');
             $table->decimal('fine_rate');
+            $table->decimal('interest_per_day');
             $table->decimal('loan_amount');
-            $table->time('duration_maximum');
             $table->time('duration_minimum');
+            $table->time('duration_maximum');
             $table->timestamps();
         });
     }

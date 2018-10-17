@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
          $this->call(SaccosDepartmentsTableSeeder::class);
          $this->call(SaccosUserRolesTableSeeder::class);
          $this->call(SaccosSystemAdminSeeder::class);
+         $this->call(SaccosSystemUsersTableSeeder::class);
     }
 }

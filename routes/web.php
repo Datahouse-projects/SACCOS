@@ -16,7 +16,7 @@ Route::get('/', [
     'as'=>'index'
 ]);
 /*########################################################
- SACCOS ORGANIZATIONS ROUTES
+           SACCOS ORGANIZATIONS ROUTES
 ##########################################################*/
 Route::get('/saccos/organizations/management', [
     'uses'=>'SaccosManagementController@index',
@@ -30,15 +30,43 @@ Route::post('/saccos/store/organizations', [
     'uses'=>'SaccosManagementController@store',
     'as'=>'saccos.store.organizations'
 ]);
-############################################################
 /*########################################################
- SACCOS DEPARTMENTS ROUTES
+           SACCOS DEPARTMENTS ROUTES
 ##########################################################*/
 Route::get('/saccos/organizations/departments', [
     'uses'=>'SaccosDepartmentController@index',
     'as'=>'saccos.organizations.departments'
 ]);
-############################################################
+/*########################################################
+            SACCOS MEMBERS ROUTES
+##################################################*/
+
+Route::get('/saccos/members/managements', [
+    'uses'=>'SaccosMemberManagementController@index',
+    'as'=>'saccos.members.managements'
+]);
+Route::get('/saccos/create/members', [
+    'uses'=>'SaccosMemberManagementController@create',
+    'as'=>'saccos.create.members'
+]);
+Route::post('/saccos/store/members', [
+    'uses'=>'SaccosMemberManagementController@store',
+    'as'=>'saccos.store.member'
+]);
+
+/*########################################################
+            SACCOS LOANS ROUTES
+##########################################################*/
+Route::get('/saccos/Loans/management', [
+    'uses'=>'SaccosLoansManagementController@index',
+    'as'=>'saccos.loans.management'
+]);
+
+Route::get('/saccos/create/members', [
+    'uses'=>'SaccosLoansManagementController@create',
+    'as'=>'saccos.create.loans'
+]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -15,9 +15,7 @@ class CreateSaccosMembersTable extends Migration
     {
         Schema::create('saccos_members', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('member_first_name');
-            $table->string('member_middle_name');
-            $table->string('member_surname');
+            $table->string('member_full_name');
             $table->string('town');
             $table->string('residence');
             $table->string('occupation');
@@ -29,9 +27,7 @@ class CreateSaccosMembersTable extends Migration
             $table->string('passport_image');
             $table->integer('department_id')->unsigned()->nullable();
             $table->foreign('department_id')->references('id')->on('saccos_departments')->onDelete('cascade');
-            $table->integer('organization_id')->unsigned()->nullable();
-            $table->foreign('organization_id')->references('id')->on('saccos_organizations')->onDelete('cascade');
-            $table->timestamps();
+          $table->timestamps();
         });
     }
 

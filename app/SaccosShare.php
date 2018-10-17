@@ -9,6 +9,7 @@ class SaccosShare extends Model
     protected $fillable =[
         'amount_of_share',
         'member_id',
-        'date_opened'
+        'date_opened',
+        'date_closed'
     ];
 }

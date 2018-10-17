@@ -19,6 +19,7 @@ class CreateSaccosSharesTable extends Migration
             $table->integer('member_id')->unsigned()->nullable();
             $table->foreign('member_id')->references('id')->on('saccos_members')->onDelete('cascade');
             $table->date('date_opened');
+            $table->date('date_closed');
             $table->timestamps();
         });
     }

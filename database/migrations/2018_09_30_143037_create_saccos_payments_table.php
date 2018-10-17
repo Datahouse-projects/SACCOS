@@ -15,12 +15,13 @@ class CreateSaccosPaymentsTable extends Migration
     {
         Schema::create('saccos_payments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('loan_id')->unsigned()->nullable();
-            $table->foreign('loan_id')->references('id')->on('saccos_loans')->onDelete('cascade');
-            $table->date('date');
+            $table->decimal('amount');
             $table->string('payment_type');
             $table->string('posted_status');
             $table->string('received_by');
+            $table->date('date');
+            $table->integer('loan_id')->unsigned()->nullable();
+            $table->foreign('loan_id')->references('id')->on('saccos_loans')->onDelete('cascade');
             $table->timestamps();
         });
     }

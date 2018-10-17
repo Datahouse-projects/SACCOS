@@ -4,12 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SaccosShareContributionHistory extends Model
+class SaccosContributionHistory extends Model
 {
     protected $fillable =[
-        'member_id',
         'contribution_id',
+        'member_id',
+        'member_full_name',
         'contribution_start_date',
         'contribution_end_date'
     ];
+    //
 }

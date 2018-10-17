@@ -26,6 +26,5 @@ class SaccosOrganizationsTableSeeder extends Seeder
         ];
         SaccosOrganization::create($org1);
         SaccosOrganization::create($org2);
-
     }
 }

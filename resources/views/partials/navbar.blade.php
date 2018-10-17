@@ -12,7 +12,7 @@
             @auth
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a href="{{route('home')}}" class="nav-link"><small>Dashboard</small></a>
+                    <a href="{{route('home')}}" class="nav-link">@if(Route::currentRouteName() == 'home')<small><b class="text-info">Dashboard</b></small> @else<small>Dashboard </small> @endif</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link"><small>Statistics and Analysis</small></a>

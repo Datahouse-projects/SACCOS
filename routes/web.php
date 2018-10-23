@@ -30,6 +30,14 @@ Route::post('/saccos/store/organizations', [
     'uses'=>'SaccosManagementController@store',
     'as'=>'saccos.store.organizations'
 ]);
+Route::get('/saccos/edit/organization/{id}', [
+    'uses'=>'SaccosManagementController@edit',
+    'as'=>'saccos.edit.organization'
+]);
+Route::post('/saccos/update/organization/{id}', [
+    'uses'=>'SaccosManagementController@update',
+    'as'=>'saccos.update.organization'
+]);
 /*########################################################
            SACCOS DEPARTMENTS ROUTES
 ##########################################################*/
@@ -45,9 +53,9 @@ Route::get('/saccos/members/managements', [
     'uses'=>'SaccosMemberManagementController@index',
     'as'=>'saccos.members.managements'
 ]);
-Route::get('/saccos/create/members', [
+Route::get('/saccos/create/member', [
     'uses'=>'SaccosMemberManagementController@create',
-    'as'=>'saccos.create.members'
+    'as'=>'saccos.create.member'
 ]);
 Route::post('/saccos/store/members', [
     'uses'=>'SaccosMemberManagementController@store',
@@ -67,6 +75,37 @@ Route::get('/saccos/create/members', [
     'as'=>'saccos.create.loans'
 ]);
 
+/*########################################################
+            SACCOS LOANS ROUTES
+##########################################################*/
+Route::get('/saccos/contributions/payments/managements', [
+    'uses'=>'SaccosContributionsAndPaymentsController@create',
+    'as'=>'saccos.contributions.payments.managements'
+]);
+############################################################
+Route::get('/saccos/');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+/*########################################################
+            SACCOS NORMAL SYSTEM USER ROUTES
+##########################################################*/
+
+//LOAN
+
+Route::get('/user/loan','SaccosNormalSystemUserController@loan')->name('user.loan');
+Route::get('/user/loan/create','SaccosNormalSystemUserController@createLoan')->name('user.loan.create');
+Route::put('/user/loan/store','SaccosNormalSystemUserController@storeLoan')->name('user.loan.store');
+Route::get('/user/loan/edit/{id}','SaccosNormalSystemUserController@editLoan')->name('user.loan.edit');
+Route::get('/user/loan/update/{id}','SaccosNormalSystemUserController@updateLoan')->name('user.loan.update');
+Route::get('/user/loan/destroy/{id}','SaccosNormalSystemUserController@destroyLoan')->name('user.loan.destroy');
+
+//CONTRIBUTION AND PAYMENTS
+
+Route::get('/user/payment_and_contribution','SaccosNormalSystemUserController@contributionAndPayment')->name('user.payment.contribution');
+Route::get('/user/payment/create','SaccosNormalSystemUserController@createPayment')->name('user.payment.create');
+Route::put('/user/payment/store','SaccosNormalSystemUserController@storePayment')->name('user.payment.store');
+Route::get('/user/payment/edit/{id}','SaccosNormalSystemUserController@editPayment')->name('user.payment.edit');
+Route::get('/user/payment/update/{id}','SaccosNormalSystemUserController@updatePayment')->name('user.payment.update');
+############################################################

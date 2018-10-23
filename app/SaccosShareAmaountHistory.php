@@ -10,6 +10,9 @@ class SaccosShareAmaountHistory extends Model
 
       'member_id','amount', 'start_date', 'end_date'
      ];
-
+    public function shares()
+    {
+        return $this->hasMany('App\SaccosShare(');
+    }
 
 }

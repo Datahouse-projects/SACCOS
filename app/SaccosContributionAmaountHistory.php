@@ -10,5 +10,13 @@ class SaccosContributionAmaountHistory extends Model
 
         'member_id','amount', 'start_date', 'end_date'
     ];
+    public function member()
+    {
+        return $this->belongsTo('App\SaccosMember');
 
+    }
+    public function contribution()
+    {
+        return $this->belongsTo('App\SaccosContribution');
+    }
 }

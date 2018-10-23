@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    @if(Auth::user()->role_id == 1 or Auth::user()->role_id == 2 or Auth::user()->role_id == 3 or Auth::user()->role_id == 4)
   <div  style="margin:0px 20px 0px  20px;">
       <div class="row">
           @include('partials.leftnavbar')
@@ -12,7 +13,7 @@
                           <thead class="table-dark">
                           <th><small style="color: #FFCD42;"> Id</small></th>
                           <th><small style="color: #FFCD42;">Logo</small></th>
-                          <th><small style="color: #FFCD42;">Oraganization Name</small></th>
+                          <th><small style="color: #FFCD42;">Organization Name</small></th>
                           <th><small style="color: #FFCD42;">Location</small></th>
                           <th><small style="color: #FFCD42;">Functionality</small></th>
                           <th><small style="color: #FFCD42;">Created at</small></th>
@@ -29,7 +30,7 @@
                                       <td><small>{{$organization->location}}</small></td>
                                       <td><small>{{$organization->functionality}}</small></td>
                                       <td><small>{{$organization->created_at}}</small></td>
-                                      <th><small><a href="{{$organization->id}}"><b style="color: green;">Edit</b></a></small></th>
+                                      <th><small><a href="{{route('saccos.edit.organization',['id'=>$organization->id])}}"><b style="color: green;">Edit</b></a></small></th>
                                       <th><small><a href="{{$organization->id}}"><b style="color: red;">Delete</b></a></small></th>
                                   </tr>
                               @endforeach
@@ -44,4 +45,9 @@
           </div>
       </div>
   </div>
+    @else
+        <div>
+            <h1 style="font-size: 100px; text-align:center;">404</h1>
+        </div>
+    @endif
 @endsection

@@ -10,7 +10,7 @@ class SaccosLoan extends Model
         'member_id',
         'organization_id',
         'loans_category_id',
-        'member_name',
+        'member_full_name',
         'created_date',
         'duration',
         'issued_date',
@@ -21,6 +21,26 @@ class SaccosLoan extends Model
         'payment_principal',
         'payment_interest',
         'loan_status',
-        'muximum amount'
+        'muximum_amount'
     ];
+
+
+    public function loan_categories(){
+        return $this->hasMany('App\SaccosLoanCategory');
+    }
+
+    public function member(){
+        return $this->belongsTo('App\SaccosMember');
+    }
+    public function members(){
+        return $this->belongsTo('App\SaccosMember');
+    }
+
+    public function organization(){
+        return $this->belongsTo('App\SaccosOrganization');
+    }
+    public function payments()
+    {
+        return $this->hasMany('App\SaccosPayment');
+    }
 }

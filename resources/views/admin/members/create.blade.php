@@ -17,7 +17,7 @@
                         <div class="card-header" style="background:#8B8B8B; color: black; "><h5 style="text-align: center;">{{ __('Create Member') }}</h5></div>
 
                         <div class="card-body">
-                            <form method="POST" action="{{ route('saccos.store.member') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('saccos.store.member') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="member_full_name" class="col-sm-4 col-form-label text-md-right">{{ __('Member full Name') }}</label>

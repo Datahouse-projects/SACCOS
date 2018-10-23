@@ -8,7 +8,11 @@ class SaccosSalary extends Model
 {
     protected $fillable =[
             'member_id',
-            'member_name',
+            'member_full_name',
             'amount'
     ];
+    public function member()
+    {
+        return $this->hasOne('App\SaccosMember');
+    }
 }

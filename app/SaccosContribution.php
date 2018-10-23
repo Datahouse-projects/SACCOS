@@ -12,11 +12,29 @@ class SaccosContribution extends Model
 
     ];
 
-    public function members()
+    public function organizations()
     {
-        return $this->has('App\SaccosMember');
+        return $this->hasMany('App\SaccosOrganization');
 
     }
-    public function organization(){
-        return $this->hasMany('App\SaccosOrganization');
+    public function members()
+    {
+        return $this->hasMany('App\SaccosMember');
+    }
+    public function member()
+    {
+        return $this->belongsTo('App\SaccosMember');
+    }
+    public function organization()
+    {
+        return $this->belongsTo('App\SaccosOrganization');
+    }
+    public function contribution_history()
+    {
+        return $this->belongsTo('App\SaccosContributionHistory(');
+    }
+    public function contribution_amount_histories()
+    {
+        return $this->hasMany('App\SaccosContributionAmountHistory');
+    }
 }

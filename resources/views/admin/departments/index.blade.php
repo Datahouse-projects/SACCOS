@@ -17,7 +17,7 @@
                            <thead class="table-dark">
                            <th><small style="color: #FFCD42;"> Id</small></th>
                            <th><small style="color: #FFCD42;">Department Name</small></th>
-                           <th><small style="color: #FFCD42;">Organization </small></th>
+                           <th><small style="color: #FFCD42;">Organization Name</small></th>
                            <th><small style="color: #FFCD42;">Created at</small></th>
                            <th><small style="color: #FFCD42;"></small></th>
                            <th><small style="color: #FFCD42;"></small></th>
@@ -28,7 +28,7 @@
                                    <tr>
                                        <td><small>{{$department->id}}</small></td>
                                        <td><small>{{$department->department_name}}</small></td>
-                                       <td><small>{{$department->organization_id}}</small></td>
+                                       <td><small>{{$department->organization->organization_name}}</small></td>
                                        <td><small>{{$department->created_at}}</small></td>
                                        <th><small><a href="{{$department->id}}"><b style="color: green;">Edit</b></a></small></th>
                                        <th><small><a href="{{$department->id}}"><b style="color: red;">Delete</b></a></small></th>

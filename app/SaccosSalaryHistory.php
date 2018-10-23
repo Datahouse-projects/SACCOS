@@ -12,4 +12,12 @@ class SaccosSalaryHistory extends Model
         'salary_amount_start_date',
         'salary_amount_end_date'
     ];
+    public function members()
+    {
+        return $this->hasMany('App\SaccosMember');
+    }
+    public function salaries()
+    {
+        return $this->hasMany('App\SaccosSalary');
+    }
 }

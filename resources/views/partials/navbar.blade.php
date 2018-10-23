@@ -11,6 +11,7 @@
             <!-- Left Side Of Navbar -->
             @auth
             <ul class="navbar-nav mr-auto">
+                @if(Auth::user()->role_id == 1 or Auth::user()->role_id == 2 or Auth::user()->role_id == 3 or Auth::user()->role_id == 4)
                 <li class="nav-item">
                     <a href="{{route('home')}}" class="nav-link">@if(Route::currentRouteName() == 'home')<small><b class="text-info">Dashboard</b></small> @else<small>Dashboard </small> @endif</a>
                 </li>
@@ -29,6 +30,7 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link"><small>System Updates and Error Report</small></a>
                 </li>
+                @endif
             </ul>
         @endauth
 

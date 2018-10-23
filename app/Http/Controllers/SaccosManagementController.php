@@ -75,7 +75,8 @@ class SaccosManagementController extends Controller
      */
     public function edit($id)
     {
-        //
+        $organization = SaccosOrganization::find($id);
+        return view('admin.organizations.edit')->with('organization',$organization);
     }
 
     /**
@@ -87,7 +88,27 @@ class SaccosManagementController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $organization  = SaccosOrganization::find($id);
+
+        $this->validate($request,[
+            'organization_name'=>'required',
+            'location'=>'required',
+            'functionality'=>'required'
+        ]);
+        if ($request->has('logo')){
+           $logo = $request->logo;
+           $logo_new_name = 'saccos'.time().$logo->getClientOriginalName();
+           $logo->move('uploads/organization/images/',$logo_new_name);
+           $organization->logo = 'uploads/organization/images/'.$logo_new_name;
+           $organization->save();
+        }
+        $organization->organization_name = $request->organization_name;
+        $organization->location = $request->location;
+        $organization->functionality = $request->functionality;
+        $organization->save();
+
+        return redirect()->back()->with('success','Organization '.$request->organization_name.' updated successful');
+
     }
 
     /**

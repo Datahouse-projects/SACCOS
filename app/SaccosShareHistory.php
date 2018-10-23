@@ -11,4 +11,8 @@ class SaccosShareHistory extends Model
         'started_date',
         'end_date'
     ];
+    public function share()
+    {
+        return $this->belongsTo('App\SaccosShare');
+    }
 }

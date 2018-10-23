@@ -15,7 +15,7 @@ class CreateSaccosSalariesTable extends Migration
     {
         Schema::create('saccos_salaries', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('member_name');
+            $table->string('member_full_name');
             $table->decimal('amount');
             $table->integer('member_id')->unsigned()->nullable();
             $table->foreign('member_id')->references('id')->on('saccos_members')->onDelete('cascade');

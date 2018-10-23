@@ -15,7 +15,10 @@ class SaccosContributionsAndPaymentsController extends Controller
      */
     public function index()
     {
-        //
+   $contributions_and_payments=SaccosDepartment::orderBy('created_at','desc')->paginate(10);
+        return view('admin.departments.index')->with([
+            'contributions_and_payments'=>$contributions_and_payments
+        ]);
     }
 
     /**

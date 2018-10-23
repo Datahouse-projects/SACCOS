@@ -14,7 +14,7 @@
                                 {{ session('success') }}
                             </div>
                         @endif
-                        <div class="card-header" style="background:#8B8B8B; color: black; "><h5 style="text-align: center;">{{ __('Create Member') }}</h5></div>
+                        <div class="card-header" style="background:#8B8B8B; color: black; "><h5 style="text-align: center;">{{ __('Apply Member') }}</h5></div>
 
                         <div class="card-body">
                             <form method="POST" action="{{ route('saccos.store.loan') }}" enctype="multipart/form-data">
@@ -33,25 +33,25 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="town" class="col-sm-4 col-form-label text-md-right">{{ __('Town') }}</label>
+                                    <label for="created_date" class="col-sm-4 col-form-label text-md-right">{{ __('Created date') }}</label>
                                     <div class="col-md-6">
-                                        <input id="town" type="text" class="form-control{{ $errors->has('town') ? ' is-invalid' : '' }}" name="town" value="{{ old('town') }}" required autofocus>
+                                        <input id="created_date" type="text" class="form-control{{ $errors->has('created_date') ? ' is-invalid' : '' }}" name="created_date" value="{{ old('created_date') }}" required autofocus>
 
-                                        @if ($errors->has('town'))
+                                        @if ($errors->has('created_date'))
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('town') }}</strong>
+                                        <strong>{{ $errors->first('created_date') }}</strong>
                                     </span>
                                         @endif
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label for="residence" class="col-sm-4 col-form-label text-md-right">{{ __('Residence') }}</label>
+                                    <label for="duration" class="col-sm-4 col-form-label text-md-right">{{ __('duration') }}</label>
                                     <div class="col-md-6">
-                                        <input id="residence" type="text" class="form-control{{ $errors->has('residence') ? ' is-invalid' : '' }}" name="residence" value="{{ old('residence') }}" required autofocus>
+                                        <input id="duration" type="text" class="form-control{{ $errors->has('residence') ? ' is-invalid' : '' }}" name="duration" value="{{ old('duration') }}" required autofocus>
 
-                                        @if ($errors->has('residence'))
+                                        @if ($errors->has('duration'))
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('residence') }}</strong>
+                                        <strong>{{ $errors->first('duration') }}</strong>
                                     </span>
                                         @endif
                                     </div>

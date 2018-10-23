@@ -13,5 +13,13 @@ class SaccosContributionHistory extends Model
         'contribution_start_date',
         'contribution_end_date'
     ];
-    //
+
+    public function member()
+    {
+        return $this->hasOne('App\SaccosMember');
+    }
+    public function contribution()
+    {
+        return $this->hasOne('App\SaccosContribution');
+    }
 }

@@ -13,4 +13,13 @@ class SaccosOrganization extends Model
     public function departments(){
         return $this->hasMany('App\SaccosDepartment');
     }
+
+    public function contributions(){
+        return $this->hasMany('App\SaccosContributiont');
+    }
+
+    public function loans()
+    {
+        return $this->hasMany('App\SaccosLoans');
+    }
 }

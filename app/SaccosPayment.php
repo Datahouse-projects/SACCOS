@@ -13,4 +13,8 @@ class SaccosPayment extends Model
             'posted_status',
             'received_by'
     ];
+    public function loan()
+    {
+        return $this->belongsTo('App\SaccosLoan');
+    }
 }

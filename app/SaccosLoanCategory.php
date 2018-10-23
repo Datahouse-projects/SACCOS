@@ -12,4 +12,9 @@ class SaccosLoanCategory extends Model
                 'duration_minimum',
                 'duration_maximum'
     ];
+
+
+    public function loan(){
+        return $this->belongsTo('App\SaccosLoan');
+    }
 }

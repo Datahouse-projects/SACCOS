@@ -10,40 +10,38 @@
                     <div class="card">
                         <table class="table-bordered table table-responsive">
                             <thead class="table-dark">
-                            <th><small style="color: #FFCD42;"> id</small></th>
-                            <th><small style="color: #FFCD42;">Member Full name</small></th>
-                            <th><small style="color: #FFCD42;">Town</small></th>
-                            <th><small style="color: #FFCD42;">Residence at</small></th>
-                            <th><small style="color: #FFCD42;">Email </small></th>
-                            <th><small style="color: #FFCD42;">Country </small></th>
-                            <th><small style="color: #FFCD42;">Nationality</small></th>
-                            <th><small style="color: #FFCD42;">Mobile number</small></th>
-                            <th><small style="color: #FFCD42;">Date of registration</small></th>
-                            <th><small style="color: #FFCD42;">Passport Image</small></th>
-                            <th><small style="color: #FFCD42;">Department  id</small></th>
-                            <th><small style="color: #FFCD42;">Passport Image</small></th>
-                            <th><small style="color: #FFCD42;"></small></th>
-                            <th><small style="color: #FFCD42;"></small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">Id</small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">F_name</small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">Town</small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">Residence_at</small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">Email</small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">Country </small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">Nationality</small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">Contact</small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">registered_at</small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">Passport</small></th>
+                            <th><small style="color: #FFCD42; font-size: 10px;">Department</small></th>
+                            <th><small style="color: #FFCD42;font-size: 10px">created_at</small></th>
+
                             </thead>
                             <tbody>
                             @if($members->count() > 0)
                                 @foreach($members as $member)
                                     <tr>
-                                        <td><small>{{$member->id}}</small></td>
-                                        <td><small>{{$member->member_full_name}}</small></td>
-                                        <td><small>{{$member->town}}</small></td>
-                                        <td><small>{{$member->residence}}</small></td>
-                                        <td><small>{{$member->occupation}}</small></td>
-                                        <td><small>{{$member->email}}</small></td>
-                                        <td><small>{{$member->country}}</small></td>
-                                        <td><small>{{$member->nationality}}</small></td>
-                                        <td><small>{{$member->mobile_number}}</small></td>
-                                        <td><small>{{$member->date_of_registration}}</small></td>
-                                        <td><small><img src="{{asset($member->passport_image)}}" width="50" height="50" style="border-radius: 50%;" alt=""></small></td>
-                                        <td><small>{{$member->department_id}}</small></td>
-                                        <td><small>{{$member->created_at}}</small></td>
-                                        <th><small><a href="{{$member->id}}"><b style="color: green;">Edit</b></a></small></th>
-                                        <th><small><a href="{{$member->id}}"><b style="color: red;">Delete</b></a></small></th>
+                                        <td><small style="font-size: 10px;">{{$member->id}}</small></td>
+                                        <td><small style="font-size: 10px;">{{$member->member_full_name}}</small></td>
+                                        <td><small style="font-size: 10px;">{{$member->town}}</small></td>
+                                        <td><small style="font-size: 10px;">{{$member->residence}}</small></td>
+                                        <td><small style="font-size: 10px;">{{$member->email}}</small></td>
+                                        <td><small style="font-size: 10px;">{{$member->country}}</small></td>
+                                        <td><small style="font-size: 10px;">{{$member->nationality}}</small></td>
+                                        <td><small style="font-size: 10px;">{{$member->mobile_number}}</small></td>
+                                        <td><small style="font-size: 10px;">{{$member->date_of_registration}}</small></td>
+                                        <td><small style="font-size: 10px;"><img src="{{asset($member->passport_image)}}" width="50" height="50" style="border-radius: 50%;" alt=""></small></td>
+                                        <td><small style="font-size: 10px;">{{$member->department->department_name}}</small></td>
+                                        <td><small style="font-size: 10px;">{{$member->created_at}}</small></td>
+                                        <th><small style="font-size: 10px;"><a href="{{$member->id}}"><b style="color: green;">Edit</b></a></small></th>
+                                        <th><small style="font-size: 10px;"><a href="{{$member->id}}"><b style="color: red;">Delete</b></a></small></th>
                                     </tr>
                                 @endforeach
                             @else

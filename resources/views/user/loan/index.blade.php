@@ -15,20 +15,21 @@
                             <table class="table-bordered table table-responsive">
                                 <thead class="table-dark">
                                 <th><small style="color: #FFCD42;"> Id</small></th>
-                                <th><small style="color: #FFCD42;">Logo</small></th>
-                                <th><small style="color: #FFCD42;">Organization Name</small></th>
-                                <th><small style="color: #FFCD42;">Location</small></th>
-                                <th><small style="color: #FFCD42;">Functionality</small></th>
-                                <th><small style="color: #FFCD42;">Created at</small></th>
+                                <th><small style="color: #FFCD42;">Member full_name</small></th>
+                                <th><small style="color: #FFCD42;">Created date</small></th>
+                                <th><small style="color: #FFCD42;">Duration</small></th>
+                                <th><small style="color: #FFCD42;">Issued date</small></th>
+                                <th><small style="color: #FFCD42;">End date</small></th>
+                                <th><small style="color: #FFCD42;">Total amount</small></th>
+                                <th><small style="color: #FFCD42;">Total interest</small></th>
+                                <th><small style="color: #FFCD42;">Payment principal</small></th>
+                                <th><small style="color: #FFCD42;">Payment interest</small></th>
+                                <th><small style="color: #FFCD42;">Loan status</small></th>
+                                <th><small style="color: #FFCD42;">Maximum amount</small></th>                                <th><small style="color: #FFCD42;">Created at</small></th>
                                 <th><small style="color: #FFCD42;"></small></th>
                                 <th><small style="color: #FFCD42;"></small></th>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Loan History</td>
-                                </tr>
 
-                                </tbody>
                             </table>
                         </div>
                     </div>

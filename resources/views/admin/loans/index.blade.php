@@ -25,13 +25,13 @@
                             <th><small style="color: #FFCD42;font-size: 10px;">Payment principal</small></th>
                             <th><small style="color: #FFCD42;font-size: 10px;">Payment interest</small></th>
                             <th><small style="color: #FFCD42;font-size: 10px;">Loan status</small></th>
-                            <th><small style="color: #FFCD42;font-size: 10px;">Muximum amount</small></th>
+                            <th><small style="color: #FFCD42;font-size: 10px;">Maximum amount</small></th>
                             <th><small style="color: #FFCD42;"></small></th>
                             <th><small style="color: #FFCD42;"></small></th>
                             </thead>
                             <tbody>
                             @if($loans->count() > 0)
-                                @foreach($members as $member)
+                                @foreach($loans as $loan)
                                     <tr>
                                         <td><small>{{$loans->id}}</small></td>
                                         <td><small>{{$loans->member_full_name}}</small></td>
@@ -48,13 +48,13 @@
                                         <td><small>{{$loans->payment_principal}}</small></td>
                                         <td><small>{{$loans->payment_interest}}</small></td>
                                         <td><small>{{$loans->loan_status}}</small></td>
-                                        <td><small>{{$loans->muximum_amount}}</small></td>
+                                        <td><small>{{$loans->maximum_amount}}</small></td>
                                         <th><small><a href="{{$loans->id}}"><b style="color: green;">Edit</b></a></small></th>
                                         <th><small><a href="{{$loans->id}}"><b style="color: red;">Delete</b></a></small></th>
                                     </tr>
                                 @endforeach
                             @else
-                                <td>No Member</td>
+                                <td>No loan</td>
                             @endif
 
                             </tbody>

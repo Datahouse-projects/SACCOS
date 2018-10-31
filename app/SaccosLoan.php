@@ -21,7 +21,7 @@ class SaccosLoan extends Model
         'payment_principal',
         'payment_interest',
         'loan_status',
-        'muximum_amount'
+        'maximum_amount'
     ];
 
 

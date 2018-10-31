@@ -17,7 +17,7 @@
                         <div class="card-header" style="background:#8B8B8B; color: black; "><h5 style="text-align: center;">{{ __('Apply Member') }}</h5></div>
 
                         <div class="card-body">
-                            <form method="POST" action="{{ route('saccos.store.loan') }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('user.loan.store') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="member_full_name" class="col-sm-4 col-form-label text-md-right">{{ __('Member full Name') }}</label>

@@ -31,7 +31,7 @@ class CreateSaccosLoansTable extends Migration
             $table->decimal('payment_principal');
             $table->decimal('payment_interest');
             $table->mediumText('loan_status');
-            $table->decimal('muximum_amount');
+            $table->decimal('maximum_amount');
             $table->timestamps();
         });
     }

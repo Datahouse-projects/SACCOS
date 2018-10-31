@@ -70,13 +70,13 @@ Route::get('/saccos/Loans/management', [
     'as'=>'saccos.loans.management'
 ]);
 
-Route::get('/saccos/create/members', [
+Route::get('/saccos/create/loans', [
     'uses'=>'SaccosLoansManagementController@create',
     'as'=>'saccos.create.loans'
 ]);
 
 /*########################################################
-            SACCOS LOANS ROUTES
+            SACCOS CONTRIBUTIONS ROUTES
 ##########################################################*/
 Route::get('/saccos/contributions/payments/managements', [
     'uses'=>'SaccosContributionsAndPaymentsController@create',
@@ -96,7 +96,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/user/loan','SaccosNormalSystemUserController@loan')->name('user.loan');
 Route::get('/user/loan/create','SaccosNormalSystemUserController@createLoan')->name('user.loan.create');
-Route::put('/user/loan/store','SaccosNormalSystemUserController@storeLoan')->name('user.loan.store');
+Route::post('/user/loan/store','SaccosNormalSystemUserController@storeLoan')->name('user.loan.store');
 Route::get('/user/loan/edit/{id}','SaccosNormalSystemUserController@editLoan')->name('user.loan.edit');
 Route::get('/user/loan/update/{id}','SaccosNormalSystemUserController@updateLoan')->name('user.loan.update');
 Route::get('/user/loan/destroy/{id}','SaccosNormalSystemUserController@destroyLoan')->name('user.loan.destroy');
@@ -108,4 +108,41 @@ Route::get('/user/payment/create','SaccosNormalSystemUserController@createPaymen
 Route::put('/user/payment/store','SaccosNormalSystemUserController@storePayment')->name('user.payment.store');
 Route::get('/user/payment/edit/{id}','SaccosNormalSystemUserController@editPayment')->name('user.payment.edit');
 Route::get('/user/payment/update/{id}','SaccosNormalSystemUserController@updatePayment')->name('user.payment.update');
+
+//SHARE
+
+Route::get('/user/share','SaccosNormalSystemUserController@share')->name('user.share');
+Route::get('/user/share/create','SaccosNormalSystemUserController@createLoan')->name('user.share.create');
+
+
 ############################################################
+
+
+
+/*########################################################
+            SACCOS SALARY ROUTES
+##########################################################*/
+Route::get('/saccos/salaries/managements', [
+    'uses'=>'SaccosSalariesManagementController@index',
+    'as'=>'Saccos.salaries.management'
+]);
+
+
+
+/*########################################################
+            SACCOS SHARE ROUTES
+##########################################################*/
+Route::get('/saccos/shares/managements', [
+    'uses'=>'SaccosSharesManagementController@index',
+    'as'=>'saccos.shares.management'
+]);
+
+
+
+/*########################################################
+            SACCOS USER ACCOUNT ROUTES
+##########################################################*/
+Route::get('/saccos/users/accounts', [
+    'uses'=>'SaccosUsersAccountsController@index',
+    'as'=>'system.users.accounts.management'
+]);

@@ -14,7 +14,10 @@ class SaccosSharesManagementController extends Controller
      */
     public function index()
     {
-        //
+        $shares=SaccosShare::orderBy('created_at','desc')->paginate(10);
+        return view('admin.shares.index')->with([
+            'share'=> $shares
+        ]);
     }
 
     /**

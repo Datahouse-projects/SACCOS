@@ -13,9 +13,9 @@ class SaccosSystemAdminSeeder extends Seeder
     public function run()
     {
         $admin = [
-          'name'=>'Jafary',
-            'email'=>'hjafery@yahoo.com',
-            'password'=>bcrypt('password'),
+          'name'=>'Admin',
+            'email'=>'admin@admin.com',
+            'password'=>bcrypt('123456789'),
             'is_active'=>true,
             'role_id'=>1,
         ];

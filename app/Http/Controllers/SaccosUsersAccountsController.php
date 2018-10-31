@@ -14,7 +14,11 @@ class SaccosUsersAccountsController extends Controller
      */
     public function index()
     {
-        //
+
+        $users_accounts=SaccosUsersAccounts::orderBy('created_at','desc')->paginate(10);
+        return view('admin.users.accounts.index')->with([
+            'users_accounts'=>$users_accounts
+        ]);
     }
 
     /**
